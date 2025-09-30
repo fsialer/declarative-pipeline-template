@@ -10,7 +10,9 @@ pipeline {
     stage('Test') {
       parallel{
         stage('Test On Windows'){
-          echo 'Running test on Windows'
+          steps{
+            echo 'Running test on Windows'
+          }
         }
         stage('Test On Linux'){
           steps{
