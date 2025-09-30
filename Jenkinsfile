@@ -46,4 +46,14 @@ pipeline {
       }
     }
   }
+  post{
+    success{
+      //notification on success
+      echo 'build succeeded'
+    }
+    failure{
+      // notification on failure
+      echo 'Build failed'
+    }
+  }
 }
