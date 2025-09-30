@@ -8,8 +8,15 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
-       echo "Run tests" 
+      parallel{
+        stage('Test On Windows'){
+          echo 'Running test on Windows'
+        }
+        stage('Test On Linux'){
+          steps{
+            echo "Running test on Linux"
+          }
+        }
       }
     }
   }
